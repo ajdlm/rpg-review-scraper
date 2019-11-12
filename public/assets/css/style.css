@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "pixel_azure_bonds";
+  src: url("/assets/fonts/PixelAzureBonds.ttf") format("truetype");
+}
+
+#scraperLogo {
+  font-weight: bold;
+  font-family: pixel_azure_bonds, serif !important;
+  font-size: 1.5rem;
+}
+
+.scraperNavLink {
+    padding-top: 9px;
+}
