@@ -29,7 +29,7 @@ router.get("/", function(req, res) {
           .find(".media-deck")
           .text();
         const date = $(element)
-          .find("media-date")
+          .find(".media-date")
           .attr("datetime");
 
         db.Review.create(
@@ -39,7 +39,7 @@ router.get("/", function(req, res) {
             reviewURL: "https://www.gamespot.com" + URL,
             reviewScore: parseFloat(score),
             reviewSummary: summary,
-            reviewDate: date
+            reviewDate: date.split(" ")[0]
           },
           (err, inserted) => {
             if (err) {
@@ -52,38 +52,18 @@ router.get("/", function(req, res) {
       });
     })
     .then(() => {
-      db.Review.find({})
+      db.Review.find()
+        .sort({ reviewDate: -1 })
         .populate("comments")
-        .then(function(foundReviews) {
-          /*res.json(foundReviews);*/
-
+        .then(function(reviewsFound) {
           res.render("index", {
-            reviews: foundReviews
+            reviews: reviewsFound
           });
         })
         .catch(function(err) {
           res.json(err);
         });
     });
-
-  /*db.Review.find({})
-    .populate("comments")
-    .then(function(foundReviews) {
-      res.json(foundReviews)
-      console.log(foundReviews);
-    })
-    .catch(function(err) {
-      res.json(err);
-    });*/
-
-  //review.getReviews(function(data) {
-  //const hbsObject = {
-  //reviews: data
-  //};
-
-  //     res.render("index", hbsObject);
-
-  //});
 });
 
 module.exports = router;

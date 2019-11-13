@@ -17,9 +17,17 @@ const ReviewSchema = new Schema({
         unique: true
     },
 
+    reviewScore: {
+        type: Number
+    },
+
     reviewSummary: {
         type: String,
         unique: true
+    },
+
+    reviewDate: {
+        type: Date
     },
 
     comments: [

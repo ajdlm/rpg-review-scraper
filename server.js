@@ -21,7 +21,7 @@ app.use(express.json());
 
 // If deployed, use deployed database;
 // otherwise, use local mongoReviews database
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoReviews";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoReviewsWAMMABAMMA";
 
 // Connect Mongo database to Mongoose
 mongoose.connect(MONGODB_URI);

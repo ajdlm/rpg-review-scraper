@@ -12,6 +12,13 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="assets/javascript/app.js"></script>
 </head>
 
 <body>
@@ -28,18 +35,18 @@
             <form class="form-inline ml-auto" action="/action_page.php">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" />
 
-                <button class="btn btn-danger" type="submit">Search</button>
+                <button id="searchButton" class="btn btn-danger" type="submit">Search</button>
             </form>
         </nav>
 
-        <img src="assets/images/header-banner.jpg" alt="header-banner" style="max-width: 100%;" />
+        <img id="headerBanner" src="assets/images/header-banner.jpg" alt="header-banner" style="max-width: 100%;" />
 
         {{{body}}}
 
         <div id="push"></div>
     </div>
 
-    <footer id="sticky-footer" class="px-0 pb-0 py-4 mt-auto text-white-50" style="background: #363636; height: 80px;">
+    <footer id="sticky-footer" class="px-0 pb-0 py-4 mt-auto bg-dark text-white-50" style="height: 80px;">
         <div class="container text-center">
             <small>© 2019 Antonio de las Morenas</small>
         </div>

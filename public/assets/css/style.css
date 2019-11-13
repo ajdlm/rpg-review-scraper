@@ -24,6 +24,21 @@ body, html {
   font-size: 1.5rem;
 }
 
+#headerBanner {
+  padding-top: 78px;
+}
+
+.container-fluid hr:last-child {
+    display:none;
+}
+
 .scraperNavLink {
     padding-top: 10.5px;
+}
+
+.reviewScore {
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
+  border-width: 2px !important;
 }
