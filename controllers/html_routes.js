@@ -11,10 +11,10 @@ router.get("/", function(req, res) {
     .get(
       "https://www.gamespot.com/reviews/?review_filter_type%5Bplatform%5D=all&review_filter_type%5Bgenre%5D=46&review_filter_type%5BtimeFrame%5D=&review_filter_type%5BstartDate%5D=&review_filter_type%5BendDate%5D=&review_filter_type%5BminRating%5D=&review_filter_type%5Btheme%5D=&review_filter_type%5Bregion%5D=&___review_filter_type%5Bpublishers%5D=&___review_filter_type%5Bdevelopers%5D=&review_filter_type%5Bletter%5D=&sort=date"
     )
-    .then(function(response) {
+    .then(response => {
       const $ = cheerio.load(response.data);
 
-      $(".media-game").each(function(i, element) {
+      $(".media-game").each((i, element) => {
         const title = $(element)
           .find(".media-title")
           .text();
@@ -36,12 +36,12 @@ router.get("/", function(req, res) {
           {
             reviewTitle: title,
             reviewSource: "GameSpot",
-            reviewURL: URL,
+            reviewURL: "https://www.gamespot.com" + URL,
             reviewScore: parseFloat(score),
             reviewSummary: summary,
             reviewDate: date
           },
-          function(err, inserted) {
+          (err, inserted) => {
             if (err) {
               console.log(err);
             } else {
@@ -51,7 +51,7 @@ router.get("/", function(req, res) {
         );
       });
     })
-    .then(function() {
+    .then(() => {
       db.Review.find({})
         .populate("comments")
         .then(function(foundReviews) {

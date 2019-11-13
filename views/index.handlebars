@@ -1,19 +1,25 @@
 <div class="container">
     {{#each reviews}}
-    <div class="row">
-        <div class="col-md-3">
-            <h3>{{reviewTitle}}</h3>
-            <h4>{{reviewSource}}</h4>
-            <h5>{{reviewURL}}</h5>
+    <div class="row text-center mt-4">
+        <div class="col-md-3 d-flex align-items-center">
+            <div class="flex-column">
+                <img src="assets/images/{{reviewSource}}.png" alt="source-logo" />
+                <h3 class="text-danger">{{reviewTitle}}</h3>
+            </div>
         </div>
 
-        <div class="col-md-6">
-            <p>{{reviewSummary}}</p>
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="flex-column">
+                <p>{{reviewSummary}}</p>
+                <a href={{reviewURL}}>{{reviewURL}}</a>
+            </div>
         </div>
 
-        <div>
-            <button class="commentButton">Comments</button>
+        <div class="col-md-3 d-flex align-items-center">
+            <button class="commentButton btn btn-danger ml-auto mr-3">Comments</button>
         </div>
     </div>
+
+    <hr class="border border-danger rounded" />
     {{/each}}
 </div>
