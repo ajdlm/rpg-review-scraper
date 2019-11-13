@@ -1,0 +1,19 @@
+<div class="container">
+    {{#each reviews}}
+    <div class="row">
+        <div class="col-md-3">
+            <h3>{{reviewName}}</h3>
+            <h4>{{reviewSource}}</h4>
+            <h5>{{reviewURL}}</h5>
+        </div>
+
+        <div class="col-md-6">
+            <p>{{reviewSummary}}</p>
+        </div>
+
+        <div>
+            <button class="commentButton">Comments</button>
+        </div>
+    </div>
+    {{/each}}
+</div>

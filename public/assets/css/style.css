@@ -3,6 +3,21 @@
   src: url("/assets/fonts/PixelAzureBonds.ttf") format("truetype");
 }
 
+body, html {
+  height: 100%;
+}
+
+#notFooter {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -80px;
+}
+
+#push {
+  height: 80px;
+}
+
 #scraperLogo {
   font-weight: bold;
   font-family: pixel_azure_bonds, serif !important;
@@ -10,5 +25,5 @@
 }
 
 .scraperNavLink {
-    padding-top: 9px;
+    padding-top: 10.5px;
 }
