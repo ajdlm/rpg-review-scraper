@@ -3,7 +3,8 @@
   src: url("/assets/fonts/PixelAzureBonds.ttf") format("truetype");
 }
 
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -26,6 +27,7 @@ body, html {
 
 #headerBanner {
   padding-top: 78px;
+  width: 100%;
 }
 
 #stickyFooter {
@@ -34,16 +36,16 @@ body, html {
 }
 
 .container-fluid hr:last-child {
-    display:none;
+  display: none;
 }
 
 .scraperNavLink {
-    padding-top: 10.5px;
+  padding-top: 10.5px;
 }
 
 .reviewScore {
   border-radius: 50%;
   height: 42px;
   width: 42px;
-  border-width: 2px !important;
+  border-width: 3px !important;
 }
