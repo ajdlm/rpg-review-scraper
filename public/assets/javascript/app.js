@@ -28,13 +28,17 @@ $(document).ready(() => {
 
         let nextUsername = $("<p>");
 
-        nextUsername.text(commentedReview.comments[i].commenter).addClass("mb-0");
+        nextUsername
+          .text(commentedReview.comments[i].commenter)
+          .addClass("mb-0");
 
         usernameRow.addClass("col-3").append(nextUsername);
 
         let nextCommentText = $("<p>");
 
-        nextCommentText.text(commentedReview.comments[i].commentText).addClass("mb-0");
+        nextCommentText
+          .text(commentedReview.comments[i].commentText)
+          .addClass("mb-0");
 
         textRow.addClass("col-7").append(nextCommentText);
 
@@ -44,7 +48,8 @@ $(document).ready(() => {
 
         nextCommentButton
           .text("Delete")
-          .addClass("commentDeleteButton btn btn-danger float-right");
+          .addClass("commentDeleteButton btn btn-danger float-right")
+          .attr("data-id", commentedReview.comments[i]._id);
 
         buttonRow.addClass("col-2").append(nextCommentButton);
 
@@ -53,7 +58,7 @@ $(document).ready(() => {
           .append(usernameRow)
           .append(textRow)
           .append(buttonRow);
-        
+
         let newHr = $("<hr>");
 
         newHr.addClass("border border-danger rounded my-3");
@@ -88,5 +93,16 @@ $(document).ready(() => {
     };
 
     $.post("/api/post-comment/" + toBeCommented, userComment, (req, res) => {});
+  });
+
+  $(document).on("click", ".commentDeleteButton", function(event) {
+    const toBeDeleted = $(this).data("id");
+
+    $.ajax({
+      url: "/api/delete-comment/" + toBeDeleted,
+      type: "PUT"
+    });
+
+    /*$.put("/api/delete-comment/" + toBeDeleted, (req, res) => {});*/
   });
 });

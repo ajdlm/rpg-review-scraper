@@ -32,7 +32,17 @@ router.post("/api/post-comment/:id", (req, res) => {
     });
 });
 
-router.get("/dropDatabase", function(req, res) {
+router.put("/api/delete-comment/:id", (req, res) => {
+  db.Comment.deleteOne({ _id: req.params.id }, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Comment successfully deleted.");
+    };
+  });
+});
+
+router.get("/dropDatabase", (req, res) => {
   mongoose.connection.db.dropDatabase();
 });
 
