@@ -29,8 +29,10 @@ mongoose.connect(MONGODB_URI);
 app.engine("handlebars", exphbs({ defaultLayout: "main" }))
 app.set("view engine", "handlebars");
 
+const dbRoutes = require("./controllers/db_routes.js");
 const htmlRoutes = require("./controllers/html_routes.js");
 
+app.use(dbRoutes);
 app.use(htmlRoutes);
 
 // Start the server
