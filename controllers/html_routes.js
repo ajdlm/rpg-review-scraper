@@ -15,6 +15,8 @@ router.get("/", function(req, res) {
       .then(response => {
         const $ = cheerio.load(response.data);
 
+        const newReviews = [];
+
         $(".media-game").each((i, element) => {
           const title = $(element)
             .find(".media-title")
@@ -44,34 +46,37 @@ router.get("/", function(req, res) {
           }
 
           if (!reviewExists) {
-            db.Review.create(
-              {
-                reviewTitle: title,
-                reviewSource: "GameSpot",
-                reviewURL: "https://www.gamespot.com" + URL,
-                reviewScore: parseFloat(score),
-                reviewSummary: summary,
-                reviewDate: date.split(" ")[0]
-              },
-              (err, inserted) => {
-                if (err) {
-                  console.log(err);
-                } else {
-                  console.log(inserted);
-                }
-              }
-            );
+            newReviews.push({
+              reviewTitle: title,
+              reviewSource: "GameSpot",
+              reviewURL: "https://www.gamespot.com" + URL,
+              reviewScore: parseFloat(score),
+              reviewSummary: summary,
+              reviewDate: date.split(" ")[0]
+            });
+          }
+        });
+
+        db.Review.insertMany(newReviews, (err, inserted) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(inserted);
           }
         });
       })
       .then(() => {
-        db.Review.find()
-          .sort({ reviewDate: -1 })
+        db.Review.find({})
+          .sort([["reviewDate", -1]])
           .populate("comments")
           .then(reviewsFound => {
-            res.render("index", {
+            console.log(reviewsFound);
+
+            const hbsObject = {
               reviews: reviewsFound
-            });
+            };
+
+            res.render("index", hbsObject);
           })
           .catch(function(err) {
             res.json(err);

@@ -28,6 +28,11 @@ body, html {
   padding-top: 78px;
 }
 
+#stickyFooter {
+  font-size: 11px;
+  height: 80px;
+}
+
 .container-fluid hr:last-child {
     display:none;
 }

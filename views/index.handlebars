@@ -4,6 +4,7 @@
         <div class="col-md-3 d-flex align-items-center">
             <div class="flex-column">
                 <img src="assets/images/{{reviewSource}}.png" alt="source-logo" />
+
                 <h3 class="text-danger">{{reviewTitle}}</h3>
             </div>
         </div>
@@ -11,16 +12,19 @@
         <div class="col-md-7 d-flex align-items-center">
             <div class="flex-column">
                 <p>{{reviewSummary}}</p>
+
                 <a href={{reviewURL}}>{{reviewURL}}</a>
             </div>
         </div>
 
         <div class="col-md-2 d-flex align-items-center">
             <div class="flex-column ml-auto mr-4">
-                <h3 class="reviewScore mx-auto mb-3 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
+                <h3
+                    class="reviewScore mx-auto mb-3 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
                     <span>{{reviewScore}}</span>
                 </h3>
-                <button class="commentButton btn btn-danger">Comments</button>
+
+                <button data-id={{_id}} class="commentButton btn btn-danger">Comments</button>
             </div>
         </div>
     </div>

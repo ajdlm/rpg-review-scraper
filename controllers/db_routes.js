@@ -1,6 +1,4 @@
 const express = require("express");
-const axios = require("axios");
-const cheerio = require("cheerio");
 const mongoose = require("mongoose");
 
 const router = express.Router();
