@@ -16,7 +16,9 @@ An app that scrapes the video gaming website GameSpot for its latest RPG reviews
 
 ## Bugs
 
-Currently, the results of the second find() in the route that renders the HTML come back before the insertMany() has finished inputting the new Review documents into the database. As such, it's necessary to load the page a second time to actually see any reviews that have been newly added.
+* Currently, the results of the second find() in the route that renders the HTML come back before the insertMany() has finished inputting the new Review documents into the database. As such, it's necessary to load the page a second time to actually see any reviews that have been newly added.
+
+* Currently, the function that's supposed to update the modal that displays comments after the creation of a new comment or deletion of an old one works after a comment has been created but doesn't function after a comment has been deleted.
 
 ## Plans for Future Development
 

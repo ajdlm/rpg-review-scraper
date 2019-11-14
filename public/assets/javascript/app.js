@@ -1,4 +1,10 @@
 $(document).ready(() => {
+  function updateModal() {
+    const currentReviewId = $("#makeComment").data("id");
+
+    $(".commentButton[data-id='" + currentReviewId + "']").click();
+  }
+
   $(document).on("click", "#dropDbButton", event => {
     event.preventDefault();
 
@@ -92,7 +98,9 @@ $(document).ready(() => {
       commentText: newInput
     };
 
-    $.post("/api/post-comment/" + toBeCommented, userComment, (req, res) => {});
+    $.post("/api/post-comment/" + toBeCommented, userComment, (req, res) => {
+      updateModal();
+    });
   });
 
   $(document).on("click", ".commentDeleteButton", function(event) {
@@ -100,9 +108,10 @@ $(document).ready(() => {
 
     $.ajax({
       url: "/api/delete-comment/" + toBeDeleted,
-      type: "PUT"
-    });
-
-    /*$.put("/api/delete-comment/" + toBeDeleted, (req, res) => {});*/
+      type: "PUT",
+      success: result => {
+        updateModal();
+      }
+    })
   });
 });
