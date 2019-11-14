@@ -21,7 +21,7 @@ router.post("/api/post-comment/:id", (req, res) => {
     .then(newComment =>
       db.Review.findOneAndUpdate(
         { _id: req.params.id },
-        { comments: newComment._id }
+        { $push: { comments: newComment._id } }
       )
     )
     .then(updatedReview => {

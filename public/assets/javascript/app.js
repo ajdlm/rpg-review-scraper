@@ -17,16 +17,26 @@ $(document).ready(() => {
 
       $("#makeComment").attr("data-id", targetReviewId);
 
+      $("#commentArea").empty();
+
       for (let i = 0; i < commentedReview.comments.length; i++) {
         let nextComment = $("<div>");
 
+        let usernameRow = $("<div>");
+
         let textRow = $("<div>");
+
+        let nextUsername = $("<p>");
+
+        nextUsername.text(commentedReview.comments[i].commenter).addClass("mb-0");
+
+        usernameRow.addClass("col-3").append(nextUsername);
 
         let nextCommentText = $("<p>");
 
-        nextCommentText.text(commentedReview.comments[i].commentText);
+        nextCommentText.text(commentedReview.comments[i].commentText).addClass("mb-0");
 
-        textRow.addClass("col-md-9").append(nextCommentText);
+        textRow.addClass("col-7").append(nextCommentText);
 
         let buttonRow = $("<div>");
 
@@ -34,16 +44,21 @@ $(document).ready(() => {
 
         nextCommentButton
           .text("Delete")
-          .addClass("commentDeleteButton btn btn-danger");
+          .addClass("commentDeleteButton btn btn-danger float-right");
 
-        buttonRow.addClass("col-md-3").append(nextCommentButton);
+        buttonRow.addClass("col-2").append(nextCommentButton);
 
         nextComment
-          .addClass("row d-flex align-items-center")
+          .addClass("row d-flex align-items-center my-3")
+          .append(usernameRow)
           .append(textRow)
           .append(buttonRow);
+        
+        let newHr = $("<hr>");
 
-        $("#commentArea").append(nextComment);
+        newHr.addClass("border border-danger rounded my-3");
+
+        $("#commentArea").prepend(nextComment, newHr);
       }
 
       $("#reviewComments").modal("show");
