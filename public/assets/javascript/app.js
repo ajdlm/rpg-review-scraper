@@ -8,7 +8,9 @@ $(document).ready(() => {
   $(document).on("click", "#dropDbButton", event => {
     event.preventDefault();
 
-    $.get("/dropDatabase").then(() => {});
+    $.get("/dropDatabase").then(() => {
+      window.location.reload();
+    });
   });
 
   $(document).on("click", ".commentButton", function(event) {
