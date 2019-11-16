@@ -164,4 +164,8 @@ $(document).ready(() => {
       window.location.reload();
     });
   });
+
+  $(document).on("click", "#viewUnsavedLink", () => {
+    window.location = "/";
+  });
 });
