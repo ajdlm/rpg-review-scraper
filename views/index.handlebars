@@ -20,7 +20,7 @@
         <div class="col-md-2 d-flex align-items-center">
             <div class="flex-column ml-auto mr-4">
                 <h3
-                    class="reviewScore mx-auto mb-4 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
+                    class="reviewScore mx-auto mb-4 bg-warning border border-danger d-flex align-items-center justify-content-center">
                     <span>{{reviewScore}}</span>
                 </h3>
 
@@ -32,8 +32,24 @@
     <hr class="border border-danger rounded my-3" />
     {{/each}}
     {{#ifLength reviews 0}}
-    <div class="replacementDiv d-flex align-items-center justify-content-center">
-        <h1 class="noReviews text-center text-danger">No articles found :_(</h1>
+    <div class="replacementDiv d-flex align-items-center justify-content-center py-4 w-100">
+        <div class="flex-column text-center w-100">
+            <h1 class="noReviews text-center text-danger">No unsaved reviews.</h1>
+
+            <img class="mb-2" src="assets/images/sad-crono.png" alt="sad-crono" style="min-height: 128px;" />
+
+            <div class="card w-100">
+                <div class="card-header bg-danger">
+                    <h4 class="noReviews card-title text-white">What would you like to do?</h4>
+                </div>
+
+                <div class="card-body">
+                    <h4 id="scrapeReviewsLink" class="noReviews noReviewLink text-danger mb-4">Scrape new reviews.</h4>
+
+                    <h4 id="viewSavedLink" class="noReviews noReviewLink text-danger">View saved reviews.</h4>
+                </div>
+            </div>
+        </div>
     </div>
     {{/ifLength}}
 </div>

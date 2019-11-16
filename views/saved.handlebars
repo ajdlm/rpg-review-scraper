@@ -19,12 +19,14 @@
 
         <div class="col-md-2 d-flex align-items-center">
             <div class="flex-column ml-auto mr-4">
+                <button data-id={{_id}} class="commentButton btn btn-danger mb-3">Comments</button>
+
                 <h3
                     class="reviewScore mx-auto mb-3 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
                     <span>{{reviewScore}}</span>
                 </h3>
 
-                <button data-id={{_id}} class="commentButton btn btn-danger">Comments</button>
+                <button data-id={{_id}} class="deleteReviewButton btn btn-danger">Delete Review</button>
             </div>
         </div>
     </div>
@@ -32,8 +34,22 @@
     <hr class="border border-danger rounded my-3" />
     {{/each}}
     {{#ifLength reviews 0}}
-    <div class="replacementDiv d-flex align-items-center justify-content-center">
-        <h1 class="noReviews text-center text-danger">No articles found :_(</h1>
+    <div class="replacementDiv d-flex align-items-center justify-content-center py-4 w-100">
+        <div class="flex-column text-center w-100">
+            <h1 class="noReviews text-center text-danger">No saved reviews.</h1>
+
+            <img class="mb-2" src="assets/images/sad-crono.png" alt="sad-crono" style="min-height: 128px;" />
+
+            <div class="card w-100">
+                <div class="card-header bg-danger">
+                    <h4 class="noReviews card-title text-white">Would you like to view unsaved reviews?</h4>
+                </div>
+
+                <div class="card-body">
+                    <h4 id="viewUnsavedLink" class="noReviews noReviewLink text-danger">View unsaved reviews.</h4>
+                </div>
+            </div>
+        </div>
     </div>
     {{/ifLength}}
 </div>

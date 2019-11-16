@@ -4,7 +4,7 @@ const exphbs = require("express-handlebars");
 
 // If deployed, let Heroku assign a port;
 // otherwise, use port 3000
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Require all models
 const db = require("./models");

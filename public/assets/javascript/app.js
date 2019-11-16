@@ -138,10 +138,30 @@ $(document).ready(() => {
 
     $.ajax({
       method: "PUT",
-      url: "/api/delete-comment/" + toBeDeleted,
+      url: "/api/delete-comment/" + toBeDeleted
     }).then(data => {
       console.log(data);
       updateModal();
+    });
+  });
+
+  $(document).on("click", "#scrapeReviewsLink", () => {
+    $("#scrapeButton").click();
+  });
+
+  $(document).on("click", "#viewSavedLink", () => {
+    window.location = "/saved";
+  });
+
+  $(document).on("click", ".deleteReviewButton", function(event) {
+    const savedToDelete = $(this).data("id");
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/delete-saved-review/" + savedToDelete
+    }).then(data => {
+      console.log(data);
+      window.location.reload();
     });
   });
 });

@@ -107,6 +107,16 @@ router.post("/api/post-comment/:id", (req, res) => {
     });
 });
 
+router.put("/api/delete-saved-review/:id", (req, res) => {
+  db.Review.deleteOne({ _id: req.params.id })
+  .then(result => {
+    res.json(result);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
 router.put("/api/delete-comment/:id", (req, res) => {
   db.Comment.deleteOne({ _id: req.params.id })
     .then(result => {

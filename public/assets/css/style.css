@@ -57,3 +57,9 @@ html {
 .replacementDiv {
   height: 100%;
 }
+
+.noReviewLink:hover {
+  background: #dc3545;
+  color: #FFFFFF !important;
+  cursor: pointer;
+}
