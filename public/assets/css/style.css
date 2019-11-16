@@ -63,3 +63,7 @@ html {
   color: #FFFFFF !important;
   cursor: pointer;
 }
+
+.reviewHr {
+  border-width: 1.5px !important;
+}

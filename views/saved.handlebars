@@ -19,19 +19,21 @@
 
         <div class="col-md-2 d-flex align-items-center">
             <div class="flex-column ml-auto mr-4">
-                <button data-id={{_id}} class="commentButton btn btn-danger mb-3">Comments</button>
-
                 <h3
-                    class="reviewScore mx-auto mb-3 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
+                    class="reviewScore mx-auto mb-1 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
                     <span>{{reviewScore}}</span>
                 </h3>
+
+                <h5 class="noReviews mb-3" style="font-size: 18px !important;">Score</h4>
+
+                <button data-id={{_id}} class="commentButton btn btn-danger mb-3">Comments</button>
 
                 <button data-id={{_id}} class="deleteReviewButton btn btn-danger">Delete Review</button>
             </div>
         </div>
     </div>
 
-    <hr class="border border-danger rounded my-3" />
+    <hr class="reviewHr border border-danger rounded my-3" />
     {{/each}}
     {{#ifLength reviews 0}}
     <div class="replacementDiv d-flex align-items-center justify-content-center py-4 w-100">
@@ -46,7 +48,8 @@
                 </div>
 
                 <div class="card-body pt-2 px-0">
-                    <h4 id="viewUnsavedLink" class="noReviews noReviewLink text-danger py-2 mt-1 mb-0">View unsaved reviews.</h4>
+                    <h4 id="viewUnsavedLink" class="noReviews noReviewLink text-danger py-2 mt-1 mb-0">View unsaved
+                        reviews.</h4>
                 </div>
             </div>
         </div>
