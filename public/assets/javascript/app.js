@@ -17,7 +17,7 @@ $(document).ready(() => {
     });
   });
 
-  $(document).on("click", "#dropDbButton", event => {
+  $(document).on("click", "#clearReviewsButton", event => {
     event.preventDefault();
 
     $.ajax({

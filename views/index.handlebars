@@ -32,7 +32,9 @@
     <hr class="border border-danger rounded my-3" />
     {{/each}}
     {{#ifLength reviews 0}}
-    <h1>Lola is the guddest.</h1>
+    <div class="replacementDiv d-flex align-items-center justify-content-center">
+        <h1 class="noReviews text-center text-danger">No articles found :_(</h1>
+    </div>
     {{/ifLength}}
 </div>
 
