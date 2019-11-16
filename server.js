@@ -21,12 +21,25 @@ app.use(express.json());
 
 // If deployed, use deployed database;
 // otherwise, use local mongoReviews database
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoReviewsWAMMABAMMA";
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/mongoReviewsDB";
 
 // Connect Mongo database to Mongoose
 mongoose.connect(MONGODB_URI);
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }))
+const hbs = exphbs.create({
+  helpers: {
+    ifLength: function(value1, value2, options) {
+      return value1.length === value2
+        ? options.fn(this)
+        : options.inverse(this);
+    }
+  },
+  defaultLayout: "main",
+  partialsDir: ["views/partials"]
+});
+
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 const dbRoutes = require("./controllers/db_routes.js");
@@ -37,5 +50,5 @@ app.use(htmlRoutes);
 
 // Start the server
 app.listen(PORT, function() {
-    console.log("App running on port " + PORT + ".");
+  console.log("App running on port " + PORT + ".");
 });

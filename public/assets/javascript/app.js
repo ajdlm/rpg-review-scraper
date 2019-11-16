@@ -5,10 +5,40 @@ $(document).ready(() => {
     $(".commentButton[data-id='" + currentReviewId + "']").click();
   }
 
-  $(document).on("click", "#dropDbButton", event => {
+  $(document).on("click", "#scrapeButton", event => {
     event.preventDefault();
 
-    $.get("/dropDatabase").then(() => {});
+    $.ajax({
+      method: "POST",
+      url: "/api/scrape-new-reviews"
+    }).then(data => {
+      console.log(data);
+      window.location.reload();
+    });
+  });
+
+  $(document).on("click", "#clearReviewsButton", event => {
+    event.preventDefault();
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/delete-unsaved-reviews"
+    }).then(data => {
+      console.log(data);
+      window.location.reload();
+    });
+  });
+
+  $(document).on("click", ".saveButton", function(event) {
+    const toBeSaved = $(this).data("id");
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/save-review/" + toBeSaved
+    }).then(data => {
+      console.log(data);
+      window.location.reload();
+    });
   });
 
   $(document).on("click", ".commentButton", function(event) {
@@ -107,11 +137,11 @@ $(document).ready(() => {
     const toBeDeleted = $(this).data("id");
 
     $.ajax({
+      method: "PUT",
       url: "/api/delete-comment/" + toBeDeleted,
-      type: "PUT",
-      success: result => {
-        updateModal();
-      }
-    })
+    }).then(data => {
+      console.log(data);
+      updateModal();
+    });
   });
 });
