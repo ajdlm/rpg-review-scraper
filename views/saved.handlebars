@@ -1,5 +1,4 @@
 <div class="container-fluid px-5">
-    {{#checklength reviews 1}}
     {{#each reviews}}
     <div class="row text-center">
         <div class="col-md-3 d-flex align-items-center">
@@ -28,13 +27,15 @@
                 <button data-id={{_id}} class="commentButton btn btn-danger">Comments</button>
             </div>
         </div>
-        {{else}}
-        <div class="jumbotron"></div>
-        {{/checklength}}
     </div>
 
     <hr class="border border-danger rounded my-3" />
     {{/each}}
+    {{#ifLength reviews 0}}
+    <div class="replacementDiv d-flex align-items-center">
+        <h1 class="noReviews text-center text-danger">No articles found :_(</h1>
+    </div>
+    {{/ifLength}}
 </div>
 
 <div class="modal" id="reviewComments" tabindex="-1" role="dialog" aria-hidden="true">

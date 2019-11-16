@@ -30,6 +30,10 @@ const ReviewSchema = new Schema({
         type: Date
     },
 
+    saved: {
+        type: Boolean
+    },
+
     comments: [
         {
             // Store ObjectIds in the array

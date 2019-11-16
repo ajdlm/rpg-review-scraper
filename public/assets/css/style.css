@@ -25,6 +25,10 @@ html {
   font-size: 1.5rem;
 }
 
+.noReviews {
+  font-family: pixel_azure_bonds, serif !important;
+}
+
 #headerBanner {
   padding-top: 78px;
   width: 100%;
@@ -48,4 +52,8 @@ html {
   height: 42px;
   width: 42px;
   border-width: 3px !important;
+}
+
+.replacementDiv {
+  height: 100%;
 }

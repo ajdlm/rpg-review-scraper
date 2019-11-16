@@ -5,10 +5,28 @@ $(document).ready(() => {
     $(".commentButton[data-id='" + currentReviewId + "']").click();
   }
 
+  $(document).on("click", "#scrapeButton", event => {
+    event.preventDefault();
+
+    $.ajax({
+      method: "POST",
+      url: "/api/scrape-new-reviews"
+    })
+    .then(data => {
+      console.log(data);
+      window.location.reload();
+    })
+  });
+
   $(document).on("click", "#dropDbButton", event => {
     event.preventDefault();
 
-    $.get("/dropDatabase").then(() => {
+    $.ajax({
+      method: "PUT",
+      url: "/api/delete-unsaved-reviews"
+    })
+    .then(data => {
+      console.log(data);
       window.location.reload();
     });
   });
@@ -114,6 +132,6 @@ $(document).ready(() => {
       success: result => {
         updateModal();
       }
-    })
+    });
   });
 });
