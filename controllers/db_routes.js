@@ -74,6 +74,12 @@ router.put("/api/delete-unsaved-reviews", (req, res) => {
     .catch(err => console.log(err));
 });
 
+router.put("/api/save-review/:id", (req, res) => {
+  db.Review.findOneAndUpdate({ _id: req.params.id }, { saved: true })
+    .then(result => res.json(result))
+    .catch(err => console.log(err));
+});
+
 router.get("/api/get-comments/:id", (req, res) => {
   db.Review.findOne({ _id: req.params.id })
     .populate("comments")
@@ -102,13 +108,13 @@ router.post("/api/post-comment/:id", (req, res) => {
 });
 
 router.put("/api/delete-comment/:id", (req, res) => {
-  db.Comment.deleteOne({ _id: req.params.id }, err => {
-    if (err) {
+  db.Comment.deleteOne({ _id: req.params.id })
+    .then(result => {
+      res.json(result);
+    })
+    .catch(err => {
       console.log(err);
-    } else {
-      console.log("Comment successfully deleted.");
-    }
-  });
+    });
 });
 
 router.get("/dropDatabase", (req, res) => {
