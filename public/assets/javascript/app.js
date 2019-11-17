@@ -46,8 +46,6 @@ $(document).ready(() => {
     const targetReviewId = $(this).data("id");
 
     $.get("/api/get-comments/" + targetReviewId).then(commentedReview => {
-      // Use jQuery to display modal and fill it with the appropriate comments
-
       console.log(commentedReview);
 
       $("#commentsHeader").text("Comments for " + commentedReview.reviewTitle);
@@ -104,9 +102,6 @@ $(document).ready(() => {
       }
 
       $("#reviewComments").modal("show");
-
-      // Remember to re-empty the div/find and re-append the comments again
-      // when the user adds one of their own
     });
   });
 
@@ -123,6 +118,14 @@ $(document).ready(() => {
       .val()
       .trim();
 
+    if (newUsername === "" || newInput === "") {
+      $("#commentPrompt").text("Enter both a name and comment to post.");
+
+      return;
+    };
+
+    $("#commentPrompt").empty();
+
     const userComment = {
       commenter: newUsername,
 
@@ -131,6 +134,10 @@ $(document).ready(() => {
 
     $.post("/api/post-comment/" + toBeCommented, userComment, (req, res) => {
       updateModal();
+
+      $("#username").val("");
+
+      $("#commentInput").val("");
     });
   });
 
