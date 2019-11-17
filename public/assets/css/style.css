@@ -12,11 +12,11 @@ html {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -80px;
+  margin: 0 auto -110px;
 }
 
 #push {
-  height: 80px;
+  height: 110px;
 }
 
 #scraperLogo {
@@ -36,7 +36,7 @@ html {
 
 #stickyFooter {
   font-size: 11px;
-  height: 80px;
+  height: 110px;
 }
 
 .container-fluid hr:last-child {
