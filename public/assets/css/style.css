@@ -34,9 +34,31 @@ html {
   width: 100%;
 }
 
+#commentArea {
+  min-height: 8px;
+}
+
+#username {
+  width: 150px;
+}
+
+#commentsHeader {
+  border-bottom-color: #dc3545;
+  border-width: 2px;
+}
+
+#commentsFooter {
+  border-top-color: #dc3545;
+  border-width: 2px;
+}
+
 #stickyFooter {
-  font-size: 11px;
+  font-size: 14px;
   height: 110px;
+}
+
+.scoreLabel {
+  font-size: 18px !important;
 }
 
 .container-fluid hr:last-child {
@@ -47,11 +69,20 @@ html {
   padding-top: 10.5px;
 }
 
+#scraperNavbar {
+  background: black;
+}
+
 .reviewScore {
   border-radius: 50%;
   height: 42px;
   width: 42px;
   border-width: 2px !important;
+  margin-bottom: 6px;
+}
+
+.sadCrono {
+  min-height: 128px;
 }
 
 .replacementDiv {
@@ -60,7 +91,7 @@ html {
 
 .noReviewLink:hover {
   background: #dc3545;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   cursor: pointer;
 }
 

@@ -48,7 +48,7 @@ $(document).ready(() => {
     $.get("/api/get-comments/" + targetReviewId).then(commentedReview => {
       console.log(commentedReview);
 
-      $("#commentsHeader").text("Comments for " + commentedReview.reviewTitle);
+      $("#commentsHeaderTitle").text("Comments for " + commentedReview.reviewTitle);
 
       $("#makeComment").attr("data-id", targetReviewId);
 
