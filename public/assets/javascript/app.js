@@ -65,9 +65,9 @@ $(document).ready(() => {
 
         nextUsername
           .text(commentedReview.comments[i].commenter)
-          .addClass("mb-0");
+          .addClass("mb-0 font-weight-bold");
 
-        usernameRow.addClass("col-3").append(nextUsername);
+        usernameRow.addClass("col-2").append(nextUsername);
 
         let nextCommentText = $("<p>");
 
@@ -75,7 +75,7 @@ $(document).ready(() => {
           .text(commentedReview.comments[i].commentText)
           .addClass("mb-0");
 
-        textRow.addClass("col-7").append(nextCommentText);
+        textRow.addClass("col-8").append(nextCommentText);
 
         let buttonRow = $("<div>");
 
@@ -89,14 +89,14 @@ $(document).ready(() => {
         buttonRow.addClass("col-2").append(nextCommentButton);
 
         nextComment
-          .addClass("row d-flex align-items-center my-3")
+          .addClass("row d-flex align-items-center my-2 px-2")
           .append(usernameRow)
           .append(textRow)
           .append(buttonRow);
 
         let newHr = $("<hr>");
 
-        newHr.addClass("border border-danger rounded my-3");
+        newHr.addClass("border border-danger rounded my-2");
 
         $("#commentArea").prepend(nextComment, newHr);
       }
