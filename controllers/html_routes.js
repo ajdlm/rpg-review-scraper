@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
       console.log(reviewsFound);
 
       const hbsObject = {
-        reviews: reviewsFound
+        unsavedReviews: reviewsFound
       };
 
       res.render("index", hbsObject);
@@ -29,7 +29,10 @@ router.get("/saved", (req, res) => {
       console.log(reviewsFound);
 
       const hbsObject = {
-        reviews: reviewsFound
+        saved: {
+          reviews: reviewsFound,
+          savedPage: 1
+        }
       };
 
       res.render("saved", hbsObject);

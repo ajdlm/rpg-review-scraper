@@ -36,11 +36,13 @@
                 </li>
             </ul>
 
+            {{#unless saved.savedPage}}
             <form class="form-inline ml-auto">
                 <button id="scrapeButton" class="btn btn-danger mr-sm-2" type="submit">Scrape New Reviews</button>
 
-                <button id="clearReviewsButton" class="btn btn-danger" type="submit">Clear Reviews</button>
+                <button id="clearReviewsButton" class="btn btn-danger" type="submit">Clear Unsaved Reviews</button>
             </form>
+            {{/unless}}
         </nav>
 
         <img id="headerBanner" class="mb-3" src="assets/images/header-banner.jpg" alt="header-banner" />
@@ -54,6 +56,25 @@
         class="mt-auto bg-dark text-center text-white-50 d-flex align-items-center justify-content-center">
         <p class="mb-0">© 2019 Antonio de las Morenas</p>
     </footer>
+
+    <div class="modal" id="scrapeCountModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="scrapeCountHeader" class="modal-header pr-3 pt-2 pb-2 pt-1 border-white">
+                    <button type="button" class="scrapeCountClose close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body py-0">
+                    <h3 id="scrapeCountNotice" class="pixelated mt-3 pt-2 mb-3 pb-2 text-center">
+                        </h2>
+                </div>
+
+                <div id="scrapeCountFooter" class="modal-footer p-3 border-white">
+                    <button type="button" class="scrapeCountClose btn btn-danger" data-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

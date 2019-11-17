@@ -12,8 +12,9 @@ $(document).ready(() => {
       method: "POST",
       url: "/api/scrape-new-reviews"
     }).then(data => {
-      console.log(data);
-      window.location.reload();
+      $("#scrapeCountNotice").text(`Added ${data.length} new reviews!`);
+
+      $("#scrapeCountModal").modal("show");
     });
   });
 
@@ -167,5 +168,9 @@ $(document).ready(() => {
 
   $(document).on("click", "#viewUnsavedLink", () => {
     window.location = "/";
+  });
+
+  $(document).on("click", ".scrapeCountClose", () => {
+    window.location.reload();
   });
 });

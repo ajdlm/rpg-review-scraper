@@ -1,5 +1,5 @@
 <div class="container-fluid px-5">
-    {{#each reviews}}
+    {{#each saved.reviews}}
     <div class="row text-center">
         <div class="col-md-3 d-flex align-items-center">
             <div class="flex-column">
@@ -20,11 +20,11 @@
         <div class="col-md-2 d-flex align-items-center">
             <div class="flex-column ml-auto mr-4">
                 <h3
-                    class="reviewScore mx-auto mb-1 bg-warning border border-danger text-center d-flex align-items-center justify-content-center">
+                    class="reviewScore mx-auto bg-warning border border-danger text-center d-flex align-items-center justify-content-center" style="margin-bottom: 6px;">
                     <span>{{reviewScore}}</span>
                 </h3>
 
-                <h5 class="noReviews mb-3" style="font-size: 18px !important;">Score</h4>
+                <h5 class="pixelated mb-3" style="font-size: 18px !important;">Score</h4>
 
                 <button data-id={{_id}} class="commentButton btn btn-danger mb-3">Comments</button>
 
@@ -35,20 +35,20 @@
 
     <hr class="reviewHr border border-danger rounded my-3" />
     {{/each}}
-    {{#ifLength reviews 0}}
+    {{#ifLength saved.reviews 0}}
     <div class="replacementDiv d-flex align-items-center justify-content-center py-4 w-100">
         <div class="flex-column text-center w-100">
-            <h1 class="noReviews text-center text-danger">No saved reviews.</h1>
+            <h1 class="pixelated text-center text-danger">No saved reviews.</h1>
 
             <img class="mb-2" src="assets/images/sad-crono.png" alt="sad-crono" style="min-height: 128px;" />
 
             <div class="card w-100">
                 <div class="card-header bg-danger">
-                    <h4 class="noReviews card-title text-white mb-0">Would you like to view unsaved reviews?</h4>
+                    <h4 class="pixelated card-title text-white mb-0">Would you like to view unsaved reviews?</h4>
                 </div>
 
                 <div class="card-body pt-2 px-0">
-                    <h4 id="viewUnsavedLink" class="noReviews noReviewLink text-danger py-2 mt-1 mb-0">View unsaved
+                    <h4 id="viewUnsavedLink" class="pixelated noReviewLink text-danger py-2 mt-1 mb-0">View unsaved
                         reviews.</h4>
                 </div>
             </div>
