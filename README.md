@@ -2,6 +2,8 @@
 
 An app that scrapes the video gaming website GameSpot for its latest RPG reviews, saves them to a database, and displays them to the user.
 
+Deployed app at https://rpg-review-scraper.herokuapp.com/.
+
 ## How to Use This App
 
 * To scrape the most recent RPG reviews from the GameSpot website and save them to the database, click on the "Scrape New Reviews" button that appears on the right side of the navbar on the "Home" page.
