@@ -30,8 +30,15 @@ html {
 }
 
 #headerBanner {
-  padding-top: 94px;
+  margin-top: 94px;
   width: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #commentArea {
