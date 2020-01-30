@@ -67,7 +67,7 @@ $(document).ready(() => {
           .text(commentedReview.comments[i].commenter)
           .addClass("mb-0 font-weight-bold");
 
-        usernameRow.addClass("col-2").append(nextUsername);
+        usernameRow.addClass("col-3").append(nextUsername);
 
         let nextCommentText = $("<p>");
 
@@ -75,7 +75,7 @@ $(document).ready(() => {
           .text(commentedReview.comments[i].commentText)
           .addClass("mb-0");
 
-        textRow.addClass("col-8").append(nextCommentText);
+        textRow.addClass("col-7").append(nextCommentText);
 
         let buttonRow = $("<div>");
 
