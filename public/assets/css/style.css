@@ -179,7 +179,11 @@ html {
   }
 
   #headerBanner {
-    margin-top: 141px;
+    margin-top: 127px;
+  }
+
+  #pushCarouselDown {
+    height: 14px;
   }
 
   .carousel-caption {
@@ -213,7 +217,11 @@ html {
   }
 
   #headerBanner {
-    margin-top: 168.5px;
+    margin-top: 114px;
+  }
+
+  #pushCarouselDown {
+    height: 54.5px;
   }
 
   .carousel-caption {
@@ -246,7 +254,11 @@ html {
   }
 
   #headerBanner {
-    margin-top: 156.5px;
+    margin-top: 108px;
+  }
+
+  #pushCarouselDown {
+    height: 48.5px;
   }
 
   .carousel-caption {
