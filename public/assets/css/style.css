@@ -123,18 +123,29 @@ html {
 }
 
 @media screen and (max-width: 955px) {
-  #scraperNavbar, #scrapeButton, #clearReviewsButton {
+  #scraperNavbar,
+  #scrapeButton,
+  #clearReviewsButton {
     font-size: 14px !important;
   }
 
   .container-fluid {
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 }
 
 @media screen and (max-width: 900px) {
-  #scraperNavbar, #scrapeButton, #clearReviewsButton {
+  #scraperNavbar,
+  #scrapeButton,
+  #clearReviewsButton {
     font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .commentButton,
+  .deleteReviewButton {
+    font-size: 12px;
   }
 }
 
@@ -150,8 +161,24 @@ html {
 }
 
 @media screen and (max-width: 767px) {
-  #scraperNavbar, #scrapeButton, #clearReviewsButton {
+  #scraperNavbar,
+  #scrapeButton,
+  #clearReviewsButton {
     font-size: 14px !important;
+  }
+
+  .commentButton,
+  .deleteReviewButton {
+    font-size: 16px;
+  }
+
+  .commentButton {
+    margin-bottom: 0 !important;
+    margin-right: 1px;
+  }
+
+  .deleteReviewButton {
+    margin-left: 1px;
   }
 
   #scraperLogo {
@@ -166,7 +193,9 @@ html {
     margin-top: 16px;
   }
 
-  .navbar-nav, .nav-link, .nav-item {
+  .navbar-nav,
+  .nav-link,
+  .nav-item {
     display: inline !important;
   }
 
@@ -249,7 +278,8 @@ html {
     margin-right: calc(50% - 75.08px);
   }
 
-  #scrapeButton, #clearReviewsButton {
+  #scrapeButton,
+  #clearReviewsButton {
     font-size: 10px !important;
   }
 
@@ -289,7 +319,6 @@ html {
     font-size: 8px;
   }
 }
-
 
 @media screen and (max-width: 359px) {
   .carousel-caption {
