@@ -96,6 +96,10 @@ html {
   height: 100%;
 }
 
+.sourceImage {
+  max-width: 100%;
+}
+
 .noReviewLink:hover {
   background: #dc3545;
   color: #ffffff !important;
