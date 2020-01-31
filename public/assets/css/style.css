@@ -114,6 +114,10 @@ html {
   display: block !important;
 }
 
+.flex-column {
+  width: 100%;
+}
+
 @media screen and (max-width: 955px) {
   #scraperNavbar, #scrapeButton, #clearReviewsButton {
     font-size: 14px !important;
@@ -235,10 +239,6 @@ html {
 
   #scrapeButton, #clearReviewsButton {
     font-size: 10px !important;
-  }
-
-  .textColumn {
-    max-width: 100%;
   }
 
   #headerBanner {
