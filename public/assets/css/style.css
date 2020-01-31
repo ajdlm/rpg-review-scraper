@@ -110,6 +110,10 @@ html {
   word-wrap: break-word;
 }
 
+.carousel-caption {
+  display: block !important;
+}
+
 @media screen and (max-width: 955px) {
   #scraperNavbar, #scrapeButton, #clearReviewsButton {
     font-size: 14px !important;
@@ -169,6 +173,19 @@ html {
   #headerBanner {
     margin-top: 141px;
   }
+
+  .carousel-caption {
+    max-width: 220px;
+    padding: 14px 0;
+  }
+
+  .carousel-caption h5 {
+    font-size: 16px;
+  }
+
+  .carousel-caption p {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 545px) {
@@ -189,6 +206,18 @@ html {
 
   #headerBanner {
     margin-top: 168.5px;
+  }
+
+  .carousel-caption {
+    max-width: 200px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 13px;
+  }
+
+  .carousel-caption p {
+    font-size: 10px;
   }
 }
 
@@ -214,5 +243,49 @@ html {
 
   #headerBanner {
     margin-top: 156.5px;
+  }
+
+  .carousel-caption {
+    max-width: 180px;
+    padding: 10px 0;
+  }
+
+  .carousel-caption h5 {
+    font-size: 12px;
+  }
+
+  .carousel-caption p {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .carousel-caption {
+    max-width: 160px;
+    padding: 8px 0;
+  }
+
+  .carousel-caption h5 {
+    font-size: 10px;
+  }
+
+  .carousel-caption p {
+    font-size: 8px;
+  }
+}
+
+
+@media screen and (max-width: 359px) {
+  .carousel-caption {
+    max-width: 150px;
+    padding: 6px 0;
+  }
+
+  .carousel-caption h5 {
+    font-size: 9px;
+  }
+
+  .carousel-caption p {
+    font-size: 7px;
   }
 }
