@@ -36,7 +36,7 @@ html {
 
 .carousel-caption {
   background: rgba(0, 0, 0, 0.5);
-  width: 300px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -114,6 +114,10 @@ html {
   #scraperNavbar, #scrapeButton, #clearReviewsButton {
     font-size: 14px !important;
   }
+
+  .container-fluid {
+    word-wrap:break-word;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -185,5 +189,30 @@ html {
 
   #headerBanner {
     margin-top: 168.5px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  #scraperLogo {
+    font-size: 20px;
+    margin-left: calc(50% - 135.51px);
+    margin-right: calc(50% - 135.51px);
+  }
+
+  .navbar-nav {
+    margin-left: calc(50% - 75.08px);
+    margin-right: calc(50% - 75.08px);
+  }
+
+  #scrapeButton, #clearReviewsButton {
+    font-size: 10px !important;
+  }
+
+  .textColumn {
+    max-width: 100%;
+  }
+
+  #headerBanner {
+    margin-top: 156.5px;
   }
 }
