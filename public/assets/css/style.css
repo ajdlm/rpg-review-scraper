@@ -145,6 +145,11 @@ html {
     margin-right: calc(50% - 162.61px);
   }
 
+  .scoreAndButton {
+    margin-right: auto !important;
+    margin-top: 16px;
+  }
+
   .navbar-nav, .nav-link, .nav-item {
     display: inline !important;
   }
