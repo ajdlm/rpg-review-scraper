@@ -122,6 +122,10 @@ html {
   width: 100%;
 }
 
+.form-control {
+  width: auto;
+}
+
 @media screen and (max-width: 955px) {
   #scraperNavbar,
   #scrapeButton,
@@ -266,7 +270,39 @@ html {
   }
 }
 
+@media screen and (max-width: 471px) {
+  #username {
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 446px) {
+  #username {
+    width: 110px;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  #username {
+    flex: 1 1 auto !important;
+  }
+
+  #commentInput {
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  #commentInput {
+    width: 177.5px;
+  }
+}
+
 @media screen and (max-width: 415px) {
+  #commentInput {
+    width: 165px;
+  }
+
   #scraperLogo {
     font-size: 20px;
     margin-left: calc(50% - 135.51px);
@@ -305,7 +341,23 @@ html {
   }
 }
 
+@media screen and (max-width: 403px) {
+  #commentInput {
+    width: 155px;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  #commentInput {
+    width: 138.5px;
+  }
+}
+
 @media screen and (max-width: 376px) {
+  #commentInput {
+    width: 130px;
+  }
+
   .carousel-caption {
     max-width: 160px;
     padding: 8px 0;
@@ -320,7 +372,23 @@ html {
   }
 }
 
+@media screen and (max-width: 368px) {
+  #username {
+    flex: 0 1 auto !important;
+    width: 101.5px;
+  }
+}
+
 @media screen and (max-width: 359px) {
+  .modal-body,
+  .commentDeleteButton,
+  #username,
+  #commentInput,
+  #makeComment,
+  #commentsClose {
+    font-size: 14px;
+  }
+
   .carousel-caption {
     max-width: 150px;
     padding: 6px 0;
@@ -332,5 +400,53 @@ html {
 
   .carousel-caption p {
     font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 354px) {
+  #username {
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 342px) {
+  #username {
+    flex: 1 1 auto !important;
+  }
+
+  #commentInput {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .commentButton {
+    margin-bottom: 6px !important;
+  }
+}
+
+@media screen and (max-width: 332px) {
+  #commentInput {
+    width: 107px;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  #commentInput {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 312px) {
+  #username {
+    flex: 0 1 auto !important;
+    width: 85px;
+  }
+}
+
+@media screen and (max-width: 307px) {
+  #username {
+    flex: 0 1 auto !important;
+    width: 75px;
   }
 }

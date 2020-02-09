@@ -75,7 +75,7 @@ $(document).ready(() => {
           .text(commentedReview.comments[i].commentText)
           .addClass("mb-0");
 
-        textRow.addClass("col-7").append(nextCommentText);
+        textRow.addClass("col-6 col-sm-7").append(nextCommentText);
 
         let buttonRow = $("<div>");
 
@@ -86,7 +86,7 @@ $(document).ready(() => {
           .addClass("commentDeleteButton btn btn-danger float-right")
           .attr("data-id", commentedReview.comments[i]._id);
 
-        buttonRow.addClass("col-2").append(nextCommentButton);
+        buttonRow.addClass("col-3 col-sm-2").append(nextCommentButton);
 
         nextComment
           .addClass("row d-flex align-items-center my-2 px-2")
