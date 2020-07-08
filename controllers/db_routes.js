@@ -20,20 +20,23 @@ router.post("/api/scrape-new-reviews", function(req, res) {
 
         const newReviews = [];
 
-        $(".horizontal-card-item__content").each((i, element) => {
+        $("#js-sort-filter-results > section > .horizontal-card-item").each((i, element) => {
           const title = $(element)
+            .find(".horizontal-card-item__content")
             .find("a")
             .find(".horizontal-card-item__title")
             .text();
           const URL = $(element)
+            .find(".horizontal-card-item__content")
             .find("a")
             .attr("href");
           const score = $(element)
             .find(".card-review")
-            .find(".review-ring-score_score")
+            .find(".review-ring-score__score")
             .text();
-          const summary = "none available";
+          const summary = "";
           const date = $(element)
+            .find(".horizontal-card-item__content")
             .find(".card-metadata")
             .find("time")
             .attr("datetime");
