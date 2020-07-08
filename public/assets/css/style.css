@@ -8,6 +8,12 @@ html {
   height: 100%;
 }
 
+/* Make <p> elements with no text not display so that links to reviews
+with no summary are centered vertically within the empty space */
+p:empty {
+  display: none;
+}
+
 #notFooter {
   min-height: 100%;
   height: auto !important;
