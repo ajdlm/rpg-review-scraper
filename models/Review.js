@@ -22,8 +22,7 @@ const ReviewSchema = new Schema({
     },
 
     reviewSummary: {
-        type: String,
-        unique: true
+        type: String
     },
 
     reviewDate: {

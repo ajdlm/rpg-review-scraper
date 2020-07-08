@@ -11,7 +11,7 @@ router.post("/api/scrape-new-reviews", function(req, res) {
   db.Review.find({}).then(existingReviews => {
     axios
       .get(
-        "https://www.gamespot.com/reviews/?review_filter_type%5Bplatform%5D=all&review_filter_type%5Bgenre%5D=46&review_filter_type%5BtimeFrame%5D=&review_filter_type%5BstartDate%5D=&review_filter_type%5BendDate%5D=&review_filter_type%5BminRating%5D=&review_filter_type%5Btheme%5D=&review_filter_type%5Bregion%5D=&___review_filter_type%5Bpublishers%5D=&___review_filter_type%5Bdevelopers%5D=&review_filter_type%5Bletter%5D=&sort=date"
+        "https://www.gamespot.com/games/reviews/?review_filter_type%5Bplatform%5D=all&review_filter_type%5Bgenre%5D=46&review_filter_type%5BtimeFrame%5D=&review_filter_type%5BstartDate%5D=&review_filter_type%5BendDate%5D=&review_filter_type%5BminRating%5D=&review_filter_type%5Btheme%5D=&review_filter_type%5Bregion%5D=&___review_filter_type%5Bpublishers%5D=&___review_filter_type%5Bdevelopers%5D=&review_filter_type%5Bletter%5D=&sort=date"
       )
       .then(response => {
         console.log(existingReviews);
@@ -20,22 +20,22 @@ router.post("/api/scrape-new-reviews", function(req, res) {
 
         const newReviews = [];
 
-        $(".media-game").each((i, element) => {
+        $(".horizontal-card-item__content").each((i, element) => {
           const title = $(element)
-            .find(".media-title")
+            .find("a")
+            .find(".horizontal-card-item__title")
             .text();
           const URL = $(element)
             .find("a")
             .attr("href");
           const score = $(element)
-            .find(".media-well--review-score")
-            .find("span")
+            .find(".card-review")
+            .find(".review-ring-score_score")
             .text();
-          const summary = $(element)
-            .find(".media-deck")
-            .text();
+          const summary = "none available";
           const date = $(element)
-            .find(".media-date")
+            .find(".card-metadata")
+            .find("time")
             .attr("datetime");
 
           let reviewExists = false;
@@ -49,13 +49,16 @@ router.post("/api/scrape-new-reviews", function(req, res) {
           }
 
           if (!reviewExists) {
+            console.log("\n\nWow, it's new reviews:");
+            console.log(newReviews);
+            console.log("\n\n");
             newReviews.push({
               reviewTitle: title,
               reviewSource: "GameSpot",
               reviewURL: "https://www.gamespot.com" + URL,
-              reviewScore: parseFloat(score),
+              reviewScore: score,
               reviewSummary: summary,
-              reviewDate: date.split(" ")[0],
+              reviewDate: date.split(" ").slice(1, 4).join(" "),
               saved: false
             });
           }
