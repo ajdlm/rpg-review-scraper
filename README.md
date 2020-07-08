@@ -32,6 +32,8 @@ Deployed app at https://rpg-review-scraper.herokuapp.com/.
 
 Add more review sources -- this is why the GameSpot logo appears above the titles of the reviews instead of, for instance, in the navbar. The idea is that the logo of whatever site a particular review was scraped from would appear above its title.
 
+It should be noted that this is also why the reviewSummary property of the app's Review model/objects still exists in the code despite the fact that no review summaries appear on the website. This is because while GameSpot has removed review summaries from its search results page, other publications that might be added in future iterations of the app may still include such a feature.
+
 ## Technologies Used
 
 * HTML/CSS
