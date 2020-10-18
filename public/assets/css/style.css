@@ -114,6 +114,7 @@ p:empty {
 
 .reviewHr {
   border-width: 1.5px !important;
+  background: #dc3545;
 }
 
 #commentArea {
